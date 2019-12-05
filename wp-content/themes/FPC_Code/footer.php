@@ -16,16 +16,9 @@
 
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
-		<a href="<?php echo esc_url(__('https://wordpress.org/', 'fpc_code')); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf(esc_html__('Proudly powered by %s', 'fpc_code'), 'WordPress');
-			?>
-		</a>
-		<span class="sep"> | </span>
 		<?php
 		/* translators: 1: Theme name, 2: Theme author. */
-		printf(esc_html__('Powered by FPC Code', 'fpc_code'));
+		printf("Powered by FPC Code");
 		?>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
