@@ -72,10 +72,9 @@
 			</ul>
 		</header>-->
 		<header class="header">
-			<img class="logo" src="/wp-includes/images/FPC MUN Logo.jpg" alt="FPC MUN Logo" />
 			<div class="logo-container">
 				<a href="/">
-
+					<img class="logo" src="/wp-includes/images/FPC MUN Logo.jpg" alt="FPC MUN Logo" />
 				</a>
 			</div>
 
