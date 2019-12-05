@@ -1,985 +1,697 @@
-/*!
-Theme Name: FPC_Code
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: fpc_code
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-FPC_Code is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-	 ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
-html {
-	line-height: 1.15; /* 1 */
-	-webkit-text-size-adjust: 100%; /* 2 */
+header {
+	font-family: HindLight, sans-serif;
+	display: flex;
+	background: rgba(33, 41, 34, 1);
+	width: 100%;
+	height: 75px;
+	padding: 0vh 5vw;
+	margin: auto;
+	align-items: center;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	transition: 0.25s;
 }
 
-/* Sections
-	 ========================================================================== */
-
-/**
- * Remove the margin in all browsers.
- */
-
-body {
-	margin: 0;
+.logo-container,
+.nav-links,
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.25s;
 }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
+.logo-container {
+	flex: 1;
+	align-items: center;
+	justify-content: flex-start;
+	vertical-align: middle;
+	float: right;
+	clear: right;
 }
 
-/* Grouping content
-	 ========================================================================== */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-
-hr {
-	box-sizing: content-box; /* 1 */
-	height: 0; /* 1 */
-	overflow: visible; /* 2 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
-	 ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-	background-color: transparent;
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-
-abbr[title] {
-	border-bottom: none; /* 1 */
-	text-decoration: underline; /* 2 */
-	text-decoration: underline dotted; /* 2 */
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-	font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-	font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-sup {
-	top: -0.5em;
-}
-
-/* Embedded content
-	 ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-img {
-	border-style: none;
-}
-
-/* Forms
-	 ========================================================================== */
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	font-family: inherit; /* 1 */
-	font-size: 100%; /* 1 */
-	line-height: 1.15; /* 1 */
-	margin: 0; /* 2 */
-}
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input { /* 1 */
-	overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select { /* 1 */
-	text-transform: none;
-}
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	-webkit-appearance: button;
-}
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-	outline: 1px dotted ButtonText;
-}
-
-/**
- * Correct the padding in Firefox.
- */
-
-fieldset {
-	padding: 0.35em 0.75em 0.625em;
-}
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *		`fieldset` elements in all browsers.
- */
-
-legend {
-	box-sizing: border-box; /* 1 */
-	color: inherit; /* 2 */
-	display: table; /* 1 */
-	max-width: 100%; /* 1 */
-	padding: 0; /* 3 */
-	white-space: normal; /* 1 */
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-	vertical-align: baseline;
-}
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
-textarea {
-	overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-	box-sizing: border-box; /* 1 */
-	padding: 0; /* 2 */
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-	height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-	-webkit-appearance: textfield; /* 1 */
-	outline-offset: -2px; /* 2 */
-}
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-	-webkit-appearance: button; /* 1 */
-	font: inherit; /* 2 */
-}
-
-/* Interactive
-	 ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-	display: block;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-
-summary {
-	display: list-item;
-}
-
-/* Misc
-	 ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
-template {
-	display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
-	display: none;
-}
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.5;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	clear: both;
-}
-
-p {
-	margin-bottom: 1.5em;
-}
-
-dfn, cite, em, i {
-	font-style: italic;
-}
-
-blockquote {
-	margin: 0 1.5em;
-}
-
-address {
-	margin: 0 0 1.5em;
-}
-
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
-}
-
-code, kbd, tt, var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-}
-
-abbr, acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-
-mark, ins {
-	background: #fff9c0;
+.logo-container a {
 	text-decoration: none;
 }
 
-big {
-	font-size: 125%;
+.logo-container img {
+	height: 35px;
+	margin: 0;
+	margin-right: 10px;
+	vertical-align: middle;
 }
 
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-html {
+nav {
+	flex: 3;
+}
+
+.nav-links {
+	list-style: none;
+	letter-spacing: 1.25px;
+}
+
+.nav-links a:hover {
+	color: #939a9c;
+}
+
+.nav-link {
+	color: #f0f1eb;
+	font-size: 16px;
+	text-decoration: none;
+	transition: 0.25s;
+	margin: 15px;
+}
+
+.buttons {
+	flex: 1;
+	justify-content: flex-end;
+	list-style: none;
+	padding: 1.25vh 0;
+	margin: 0;
+}
+
+.buttons input[type="button"] {
+	font-family: HindLight, sans-serif;
+	line-height: 37.5px;
+	width: 67.5px !important;
+	height: 35px !important;
+	padding: 0;
+	margin-left: 15px;
+	border-radius: 5px !important;
+	font-weight: normal;
+	font-size: 16px;
+	letter-spacing: 1.25px;
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+	float: right;
+	clear: right;
+}
+
+.burger div {
+	width: 25px;
+	height: 3px;
+	background-color: #f0f1eb;
+	transition: all 0.25s ease;
+	border-radius: 5px;
+}
+
+.line2 {
+	margin: 5px 0;
+}
+
+.overlay {
+	position: absolute;
+	filter: blur(8px);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+@media screen and (max-width: 1024px) {
+	body {
+		overflow-x: hidden;
+	}
+
+	.nav-links {
+		position: absolute;
+		right: 0px;
+		left: 0px;
+		height: calc(100vh - 75px);
+		top: 75px;
+		background: rgba(33, 41, 34, 0.95);
+		display: block;
+		text-align: center;
+		align-items: center;
+		width: 100%;
+		transform: translateX(-100%);
+		transition: transform 0.25s ease-in;
+		backdrop-filter: blur(7.5px);
+	}
+
+	.nav-links li {
+		opacity: 0;
+		margin: 10vh 0;
+		transition: 0.25s;
+	}
+
+	.nav-link {
+		font-size: 24px;
+	}
+
+	.burger {
+		display: inline-block;
+		flex: 1;
+		margin-right: 10px;
+	}
+
+	.buttons input[type="button"] {
+		margin-left: 7.5px;
+	}
+
+	@media screen and (max-height: 596px) {
+		.nav-links li {
+			margin: 5vh 0;
+		}
+	}
+}
+
+.nav-active {
+	transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+	opacity: 0;
+}
+
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Basic settings for the entire page */
+*,
+*::before,
+*::after {
+	margin: 0px;
+	padding: 0px;
 	box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+*:focus {
+	outline: none !important;
 }
 
+html,
 body {
-	background: #fff;
-	/* Fallback for when there is no custom background color defined. */
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	letter-spacing: 0px;
+	color: #f0f1eb;
+	background: #f0f1eb;
+	height: 100%;
+	width: 100%;
+	font-size: 0px;
 }
 
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+/* Main margins */
+main {
+	margin-bottom: 250px;
+	margin-top: 75px;
 }
 
-ul, ol {
-	margin: 0 0 1.5em 3em;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-dt {
+/* Heading Styles */
+h1 {
+	font-size: 56px;
 	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
-}
-
-img {
-	height: auto;
-	/* Make sure images are scaled correctly. */
-	max-width: 100%;
-	/* Adhere to container width. */
-}
-
-figure {
-	margin: 1em 0;
-	/* Extra wide images within figure tags don't overflow the content area. */
-}
-
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-}
-
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: #111;
-}
-
-select {
-	border: 1px solid #ccc;
-}
-
-textarea {
-	width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-	color: royalblue;
-}
-
-a:visited {
-	color: purple;
-}
-
-a:hover, a:focus, a:active {
-	color: midnightblue;
-}
-
-a:focus {
-	outline: thin dotted;
-}
-
-a:hover, a:active {
-	outline: 0;
-}
-
-/*--------------------------------------------------------------
-## Menus
---------------------------------------------------------------*/
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-}
-
-.main-navigation ul {
-	display: none;
-	list-style: none;
+	background-color: #2c3d2a;
+	color: #f0f1eb;
+	padding: 25px 25px;
 	margin: 0;
-	padding-left: 0;
-}
-
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation li {
-	float: left;
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. */
-.screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
-}
-
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
-	/* Above WP toolbar. */
-}
-
-/* Do not show the outline on the skip link target. */
-#content[tabindex="-1"]:focus {
-	outline: 0;
-}
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-}
-
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-}
-
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
-}
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-	clear: both;
-}
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-	/* Make sure select elements fit in widgets. */
-}
-
-.widget select {
-	max-width: 100%;
-}
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
-.sticky {
-	display: block;
-}
-
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-	/* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
-}
-
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
-.wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-
-.wp-caption-text {
 	text-align: center;
 }
 
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
-.gallery {
-	margin-bottom: 1.5em;
-}
-
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
+h2 {
+	background-color: #779869;
+	color: #f0f1eb;
 	width: 100%;
+	text-align: center;
+	padding: 20px 50px;
+	font-size: 46px;
+	margin-top: 0px;
+	margin-bottom: 50px;
 }
 
-.gallery-columns-2 .gallery-item {
-	max-width: 50%;
+/* Image banner */
+.home-image img {
+	width: 100%;
+	height: 425px;
+	background-color: #2c3d2a;
+	object-fit: cover;
+	margin: 0px;
+	padding: 0px;
 }
 
-.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+/* Sets margin for sign-in google forms */
+.sign-in {
+	margin-top: 50px;
 }
 
-.gallery-columns-4 .gallery-item {
-	max-width: 25%;
+/* Styles for main text sections */
+.text ul {
+	background-color: #778e80;
+	max-width: 600px;
+	padding: 0;
+	padding-top: 25px;
+	padding-bottom: 35px;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	border-radius: 5px;
+	transition: 0.25s;
+	text-align: center;
 }
 
-.gallery-columns-5 .gallery-item {
-	max-width: 20%;
+.text li {
+	display: inline-block;
+	margin: 0px 50px;
+	vertical-align: top;
 }
 
-.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
+.text p {
+	color: #f0f1eb;
+	text-align: center;
+	padding: 0;
+	margin: 1.25vw;
+	margin-bottom: 25px;
+	font-size: 20px;
+	line-height: 30px;
+	transition: 0.25s;
+	width: 450px;
 }
 
-.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
+.text a {
+	text-decoration: none;
+	color: #f0f1eb;
+	background-color: #6e7869;
+	padding: 5px;
+	border-radius: 2.5px;
+	font-style: italic;
+	font-size: 18px;
+	margin-top: 10vh;
 }
 
-.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
+.text img {
+	width: 450px;
+	height: 300px;
+	display: inline-block;
+	margin: 0;
+	margin-top: 25px;
+	padding: 0;
+	border-radius: 5px;
+	background-color: #2c3d2a;
+	object-fit: cover;
+	transition: 0.25s;
 }
 
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
+/* Button styles */
+input[type="button"] {
+	background: #6e7869 !important;
+	border: 0px;
+	text-align: center;
+	transition: 0.25s;
+	cursor: pointer;
+	color: #f0f1eb;
+	margin: 0;
+	padding: 0;
 }
 
-.gallery-caption {
+input[type="button"]:hover {
+	background: #939a9c !important;
+}
+
+/* Simple button styles */
+.link {
+	margin: auto;
+	text-align: center;
+}
+
+.link input[type="button"] {
+	font-family: HindLight, sans-serif;
+	line-height: 37.5px;
+	height: 50px;
+	width: 100px;
+	font-size: 20px;
+	border-radius: 5px;
+	font-weight: normal;
+}
+
+/* Iframe style */
+
+iframe {
 	display: block;
+	width: 600px;
+	height: 600px;
+	margin: 0 auto;
+}
+
+/* Resize when window size is small */
+@media screen and (max-width: 1024px) {
+	.text ul {
+		max-width: 400px;
+	}
+
+	.text p {
+		width: 300px;
+	}
+
+	.text img {
+		width: 300px;
+		height: 200px;
+		object-fit: cover;
+	}
+
+	iframe {
+		width: 400px;
+	}
+}
+
+/* Configures fotns */
+@font-face {
+	font-family: HindLight;
+	src: url("/Fonts/Hind/Hind-Light.ttf");
+}
+
+@font-face {
+	font-family: HindRegular;
+	src: url("/Fonts/Hind/Hind-Regular.ttf");
+}
+
+/* Custom form styles */
+.form {
+	width: 600px;
+	max-width: 750px;
+	background-color: #778e80;
+	margin: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	padding: 0 75px;
+	padding-top: 50px;
+	padding-bottom: 250px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	transition: 0.25s;
+}
+
+/* Text for form */
+.form-title {
+	background-color: #779869;
+	color: #f0f1eb;
+	margin-bottom: 0px;
+}
+
+.form-title h2 {
+	font-size: 46px;
+	padding-bottom: 0px;
+	margin-bottom: 25px;
+}
+
+.form-title p {
+	color: #f0f1eb;
+	font-style: italic;
+	font-size: 18px;
+	padding-bottom: 15px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.form-header {
+	color: #f0f1eb;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.form p {
+	color: #f0f1eb;
+	font-size: 16px;
+	padding-bottom: 0px;
+	padding-top: 10px;
+	font-style: italic;
+}
+
+/* Text input styles */
+input[type="text"] {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	letter-spacing: 0.25px;
+	display: block;
+	width: 450px;
+	height: 35px;
+	border-width: 0px;
+	border-radius: 5px;
+	color: #6e7869;
+	background-color: #f0f1eb;
+	border-color: #212922;
+	border-style: solid;
+	font-size: 18pt;
+	margin: auto;
+	margin-top: 12.5px;
+	margin-bottom: 50px;
+	padding: 5px;
+	text-align: left;
+}
+
+textarea {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	letter-spacing: 0.25px;
+	display: block;
+	width: 450px;
+	height: 175px;
+	border-width: 0px;
+	border-radius: 5px;
+	color: #6e7869;
+	background-color: #f0f1eb;
+	border-color: #212922;
+	border-style: solid;
+	font-size: 18pt;
+	margin: auto;
+	margin-top: 12.5px;
+	margin-bottom: 50px;
+	padding: 5px;
+	text-align: left;
+	resize: none;
+}
+
+input[type="email"] {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	letter-spacing: 0.25px;
+	display: block;
+	width: 450px;
+	height: 35px;
+	border-width: 0px;
+	border-radius: 5px;
+	color: #6e7869;
+	background-color: #f0f1eb;
+	border-color: #212922;
+	border-style: solid;
+	font-size: 18pt;
+	margin: auto;
+	margin-top: 12.5px;
+	margin-bottom: 50px;
+	padding: 5px;
+}
+
+/* Form submit styles */
+input[type="submit"] {
+	font-family: HindLight, sans-serif;
+	line-height: 37.5px;
+	display: block;
+	width: 150px;
+	height: 50px;
+	border-width: 0px;
+	border-radius: 5px;
+	color: #f0f1eb;
+	background: #6e7869 !important;
+	border-color: #212922;
+	border-style: solid;
+	font-size: 20pt;
+	margin: auto;
+	margin-top: 75px;
+	margin-bottom: 0px;
+	cursor: pointer;
+	padding: 10px;
+	transition: 0.25s;
+}
+
+input[type="submit"]:hover {
+	background: #939a9c !important;
+}
+
+/* The container */
+.container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 24px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-align: right;
+}
+
+.radio-buttons {
+	display: block;
+	margin-top: 12.5px;
+	margin-bottom: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #f0f1eb;
+	border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+	background-color: #939c9a;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+	background-color: #6e7869;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+	top: 8.5px;
+	left: 8.5px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #f0f1eb;
+}
+
+/* Resize when window size is small */
+@media screen and (max-width: 1024px) {
+	.form {
+		width: 400px;
+		padding: 0 25px;
+		padding-top: 50px;
+		padding-bottom: 250px;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 350px;
+	}
+
+	.radio-buttons {
+		display: block;
+		margin-top: 12.5px;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
+.box {
+	display: inline-block;
+}
+.sign-in {
+	text-align: center;
+}
+
+/* Footer styles */
+footer {
+	background-color: #212922;
+	height: 150px;
+	align-items: center;
+	width: 100%;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	bottom: 0;
+	transition: 0.25s;
+}
+
+/* Logo in footer */
+.footer-logo {
+	width: 75px;
+	margin: auto;
+	align-content: center;
+	justify-content: center;
+	width: 25%;
+}
+
+.footer-logo img {
+	width: 75px;
+	align-self: center;
+	justify-self: center;
+}
+
+/* Button in footer */
+.footer-button input[type="button"] {
+	font-family: HindRegular, sans-serif;
+	line-height: 37.5px;
+	width: 150px;
+	height: 75px;
+	font-size: 26px;
+	border-radius: 5px;
+	font-weight: normal;
+	text-align: center;
+}
+
+.footer-button {
+	padding: 0;
+	margin: 0 100px;
+	align-items: center;
+}
+
+/* Contacts in footer */
+.footer-contacts {
+	margin: auto;
+	width: 25%;
+}
+
+.footer-contacts img {
+	float: right;
+	width: 37.5px;
+	margin: 12.5px 25px;
+}
+
+/* Resize when window size is small */
+@media screen and (max-width: 1024px) {
+	.footer-button {
+		margin: 0 5px;
+	}
 }
