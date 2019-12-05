@@ -14,7 +14,7 @@
 
 </div><!-- #content -->
 
-<footer>
+<footer class="footer">
 	<div class="footer-logo">
 		<img src="/wp-includes/images/fpc_code_logo.svg" alt="FPC Code Logo" />
 	</div>

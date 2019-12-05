@@ -1081,7 +1081,7 @@ header.header {
 	vertical-align: middle;
 }
 /* Footer styles -------------------------------------------------------------------*/
-footer {
+footer.footer {
 	background-color: #212922;
 	height: 150px;
 	align-items: center;
