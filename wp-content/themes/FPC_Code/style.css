@@ -1043,9 +1043,7 @@ header {
 	transition: 0.25s;
 }
 
-.logo-container,
-.nav-links,
-.buttons {
+.logo-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
