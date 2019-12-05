@@ -77,9 +77,18 @@
 					<img class="logo" src="/wp-includes/images/FPC MUN Logo.jpg" alt="FPC MUN Logo" />
 				</a>
 			</div>
-
+			<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'fpc_code'); ?></button>
+				<?php
+				wp_nav_menu(array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				));
+				?>
+			</nav><!-- #site-navigation -->
 			<?php
-			the_custom_logo();
+			//the_custom_logo();
+
 			if (is_front_page() && is_home()) :
 				?>
 				<h1 class="site-title">
@@ -99,16 +108,6 @@
 				<p class="site-description"><?php echo $fpc_code_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 	</div><!-- .site-branding -->
-
-	<nav id="site-navigation" class="main-navigation">
-		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'fpc_code'); ?></button>
-		<?php
-		wp_nav_menu(array(
-			'theme_location' => 'menu-1',
-			'menu_id'        => 'primary-menu',
-		));
-		?>
-	</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
