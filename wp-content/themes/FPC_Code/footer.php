@@ -14,11 +14,22 @@
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer">
-	<div class="site-info">
-		<p class="site-info">Proudly Powered by FPC Code</p>
-	</div><!-- .site-info -->
-</footer><!-- #colophon -->
+<footer>
+	<div class="footer-logo">
+		<img src="/wp-includes/images/fpc_code_logo.svg" alt="FPC Code Logo" />
+	</div>
+	<p>
+		This website is powered by FPC Code
+	</p>
+	<div class="footer-contacts">
+		<a href="https://github.com/codefpc" target="_blank">
+			<img src="/wp-includes/images/github-brands.svg" alt="Github Icon" />
+		</a>
+		<a href="mailto:fpc.coding.club@gmail.com" target="_blank">
+			<img src="/wp-includes/images/envelope-solid.svg" alt="Mail Icon" />
+		</a>
+	</div>
+</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
