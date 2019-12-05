@@ -1061,7 +1061,9 @@ footer {
 	width: 37.5px;
 	margin: 12.5px 25px;
 }
-
+footer p {
+	color: whitesmoke;
+}
 /* Resize when window size is small */
 @media screen and (max-width: 1024px) {
 	.footer-button {
