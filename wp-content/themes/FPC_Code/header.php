@@ -74,7 +74,7 @@
 		<header>
 			<div class="logo-container">
 				<a href="/">
-					<img id="logo" src="/wp-includes/images/FPC MUN Logo.jpg" alt="FPC MUN Logo" />
+					<img class="logo" src="/wp-includes/images/FPC MUN Logo.jpg" alt="FPC MUN Logo" />
 				</a>
 			</div>
 
