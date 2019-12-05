@@ -71,7 +71,7 @@
 				</li>
 			</ul>
 		</header>-->
-		<header>
+		<header class="header">
 			<div class="logo-container">
 				<a href="/">
 					<img class="logo" src="/wp-includes/images/FPC MUN Logo.jpg" alt="FPC MUN Logo" />

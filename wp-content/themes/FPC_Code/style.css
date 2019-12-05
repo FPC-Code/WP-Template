@@ -1028,7 +1028,7 @@ body {
 	font-size: 18px;
 }
 /*styles for heading ----------------------------------------------*/
-header {
+header.header {
 	font-family: "Comfortaa", sans-serif;
 	display: flex;
 	background: rgba(49, 129, 184, 1);
