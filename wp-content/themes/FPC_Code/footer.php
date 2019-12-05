@@ -18,9 +18,9 @@
 	<div class="footer-logo">
 		<img src="/wp-includes/images/fpc_code_logo.svg" alt="FPC Code Logo" />
 	</div>
-	<p>
+	<h1>
 		This website is powered by FPC Code
-	</p>
+	</h1>
 	<div class="footer-contacts">
 		<a href="https://github.com/codefpc" target="_blank">
 			<img src="/wp-includes/images/github-brands.svg" alt="Github Icon" />
