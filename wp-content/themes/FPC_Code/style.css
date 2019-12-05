@@ -1084,7 +1084,7 @@ footer {
 	width: 37.5px;
 	margin: 12.5px 25px;
 }
-footer p {
+footer h1 {
 	color: whitesmoke;
 }
 /* Resize when window size is small */
